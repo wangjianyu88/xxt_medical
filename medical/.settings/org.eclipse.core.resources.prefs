@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//WebRoot/view/about/aboutUs.html=UTF-8
+encoding//WebRoot/view/about/productIntroduction.html=UTF-8
+encoding//WebRoot/view/index.html=UTF-8
+encoding//WebRoot/view/login/login.html=UTF-8
+encoding//WebRoot/view/login/loginSuccess.html=UTF-8
+encoding//WebRoot/view/register/registerIndex.html=UTF-8
+encoding//WebRoot/view/remind/remindToday.html=UTF-8
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/messageInfo_en.properties=ISO-8859-1
+encoding//src/main/resources/messageInfo_zh.properties=ISO-8859-1
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

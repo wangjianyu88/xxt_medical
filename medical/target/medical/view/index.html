@@ -1,0 +1,30 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/> 
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8">  
+</head>
+
+<body>
+<#include "/view/inc/head.inc" > 
+
+<div class="banner">
+	<div class="m_banner">
+	<#if (languageTag=='en-US')>
+    	<img src="img/banner_down_en.png" alt="" usemap="#Map">
+	<#else>
+		<img src="img/banner_down.png" alt="" usemap="#Map">
+	</#if>
+        <map name="Map">
+          <area shape="rect" coords="390,272,586,327" href="${path!}/app/medicine.apk">
+          <area shape="rect" coords="613,272,813,325" href="${path!}/app/medicine.ipa">
+        </map>
+    </div>
+</div>
+
+<div class="list" <#if (languageTag=='en-US')>style="background:url(img/mainlist_en.jpg) no-repeat"</#if>  ></div>
+<#include "/view/inc/bottom.inc" encoding="utf-8">
+</body>
+</html>

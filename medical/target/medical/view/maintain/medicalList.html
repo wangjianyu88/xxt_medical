@@ -1,0 +1,41 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8">
+<script language="javascript" src="${path!}/view/maintain/js/medicalList.js"></script>
+</head>
+
+<body>
+<#include "/view/inc/head.inc" >
+<div class="banner_zcdl"></div>
+<div class="main" style="border:none">
+	<div class="title"><@spring.message code="page.member.login"/></div>
+  <div class="greybg">
+   	<#include "/view/inc/userLogin.inc" encoding="utf-8">
+    <div class="txlist clearfix">
+    	<div class="leftpic"><img src="${path!}/img/icon_2.gif"><br>
+    	  <@spring.message code="page.medical.manage"/></div>
+        <div class="rightcontent">
+        	<div class="btnarea" id="initDiv">
+	        	<input type="button" name="button" class="btn" id="addBt" value='<@spring.message code="page.common.add"/>' onclick="window.location='toAddOrEditMedical.do'">  &nbsp;&nbsp;
+	        	<input type="button" name="button" class="btn" id="batchDeleteBt" value='<@spring.message code="page.common.batchDelete"/>' />
+        	</div>
+        	<div class="btnarea" style="display:none" id="deleteDiv">
+	        	<input type="checkbox" name="allBox"   id="allBox"  ><@spring.message code="page.common.checkall"/>  &nbsp;&nbsp;
+	        	<input type="button" name="deleteBt" class="btn" id="deleteBt" value='<@spring.message code="page.common.delete"/>' />&nbsp;&nbsp;
+	        	<input type="button" name="cancelBt" class="btn" id="cancelBt" value='<@spring.message code="page.common.cancel"/>' >  
+        	</div>
+       	  <ul id="medicalUl">
+          </ul>
+          <div id="Pagination" class="pagination"></div>
+        </div>
+    </div>
+    
+    <p>&nbsp;</p>
+  </div>
+</div>
+<#include "/view/inc/bottom.inc" encoding="utf-8">
+</body>
+</html>

@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu May 05 11:36:48 CST 2016
+http\://192.168.22.248\:8081/nexus/content/groups/public/.error=
+http\://repo.maven.apache.org/maven2/.lastUpdated=1462419406706
+http\://jasperreports.sourceforge.net/maven2/.lastUpdated=1462419408241
+http\://192.168.22.248\:8081/nexus/content/groups/public/.lastUpdated=1462419405894
+http\://repo.maven.apache.org/maven2/.error=

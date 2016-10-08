@@ -1,0 +1,42 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8">
+<script language="javascript" src="${path!}/view/family/js/familyUserChange.js"></script>
+</head>
+
+<body>
+<#include "/view/inc/head.inc" >
+<div class="banner_zcdl"></div>
+<div class="main" style="border:none">
+	<div class="title"><@spring.message code="page.head.memberLogin"/></div>
+  <div class="greybg">
+   	<#include "/view/inc/userLogin.inc" encoding="utf-8">
+    <div class="txlist clearfix">
+    	<div class="leftpic"><img src="${path!}/img/icon_4.gif"><br>
+    	  <@spring.message code="page.member.manage"/></div>
+    	<form id="form" method="post">
+        <div class="rightcontent">
+        	<ul>
+        	<#list familyUserList as familyUser>
+               <li style="padding-left:50px"><span><input type="radio" name="userId" status="${familyUser.status!}"  value="${familyUser.userId!}" /></span><span>${familyUser.name!}</span></li>
+            </#list>  
+          </ul>
+           <br>
+            <div align="center">
+              <input type="button" name="saveBt" class="btn" id="saveBt" value='<@spring.message code="page.common.save"/>'>
+              &nbsp; 
+          <input type="button" name="button" class="btn" id="button" value='<@spring.message code="page.common.back"/>' onclick="window.location='familyUserList.do'" ></div>
+        </div>
+       </form>
+    </div>
+    
+    <p>&nbsp;</p>
+  </div>
+</div>
+<#include "/view/inc/bottom.inc" encoding="utf-8">
+</body>
+</html>

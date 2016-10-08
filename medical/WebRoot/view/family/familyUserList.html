@@ -1,0 +1,40 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8">
+<script type="text/javascript">
+$(function(){
+	$("[name='familyUser'][status='2']").attr("class", "hit");
+});
+</script>
+</head>
+
+<body>
+<#include "/view/inc/head.inc" >
+<div class="banner_zcdl"></div>
+<div class="main" style="border:none">
+	<div class="title"><@spring.message code="page.head.memberLogin"/></div>
+  <div class="greybg">
+   	<#include "/view/inc/userLogin.inc" encoding="utf-8">
+    <div class="txlist clearfix">
+    	<div class="leftpic"><img src="${path!}/img/icon_4.gif"><br>
+    	  <@spring.message code="page.member.manage"/></div>
+        <div class="rightcontent">
+        	<ul>
+            <div class="btnarea"><input type="button" name="button" class="btn" id="button" value='<@spring.message code="page.member.add"/>' onclick="window.location='familyUserAdd.do'" >&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="button" class="btn" id="button" value='<@spring.message code="page.member.change"/>' onclick="window.location='familyUserChange.do'" ></div>
+            <#list familyUserList as familyUser>   
+               <li style="padding-left:50px" name="familyUser"  status="${familyUser.status!}"><span>${familyUser.name!}</span></li>
+            </#list> 
+          </ul>
+        </div>
+    </div>
+    
+    <p>&nbsp;</p>
+  </div>
+</div>
+<#include "/view/inc/bottom.inc" encoding="utf-8">
+</body>
+</html>

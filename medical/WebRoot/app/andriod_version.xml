@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<root>
+	<apkName>medicine_V1.0.0.apk</apkName>
+	<apkUrl>/app/medicine_V1.0.0.apk</apkUrl>
+	<appName>medical</appName>
+	<changeLog>首次发布的版本</changeLog>
+	<versionCode>1</versionCode>
+	<versionName>1.0.0</versionName>
+	<forceUpdate>1</forceUpdate>
+	<status>1</status>
+	<createDate>1453453683000</createDate>
+</root>

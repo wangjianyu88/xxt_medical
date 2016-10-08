@@ -1,0 +1,39 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8">  
+<#import "/ftl/enumCompute.ftl" as my>
+</head>
+
+<body>
+<#include "/view/inc/head.inc" >    
+<div class="banner_zcdl"></div>
+<div class="main" style="border:none">
+	<div class="title"><@spring.message code="page.head.memberLogin"/></div>
+  <div class="greybg">
+   	<#include "/view/inc/userLogin.inc" encoding="utf-8">
+    <div class="txlist clearfix">
+    	<div class="leftpic"><a href="#"><img src="${path!}/img/icon_1.gif"></a><br><@spring.message code="page.remind"/></div>
+        <div class="rightcontent">
+        	<ul>
+        	<#list medicalList as medical>
+            	<li>
+            		<span> ${medical.takeTime!}</span>
+            		<span class="name">${medical.name!}</span>
+            		<span><@my.eatTime value=medical.eatTime/>服用 ${medical.takeNum!}<@my.takeUnit value=medical.takeUnit/></span>
+            		<span class="fright"><a href="${path!}/maintain/medicalInfo.do?medicalId=${medical.medicalId!}" target="_blank"><@spring.message code="page.common.view"/></a></span></li>
+             </#list>
+         		 <li align="right"><span><a href="remindHistory.do"><@spring.message code="page.remind.viewHistory"/></a></span></li>
+          </ul>
+        </div>
+    </div>
+    
+    <p>&nbsp;</p>
+  </div>
+</div>
+<#include "/view/inc/bottom.inc" encoding="utf-8">
+</body>
+</html>

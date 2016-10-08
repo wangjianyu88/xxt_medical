@@ -1,0 +1,38 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8">  
+</head>
+
+<body>
+<#include "/view/inc/head.inc" > 
+<div class="banner_about"></div>
+<div class="main">
+	<div class="title"><@spring.message code="page.head.product"/></div>
+<#if (languageTag=='zh-CN')>
+	<div style="line-height:2.0;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;
+	随着年龄的增长，健康程度也会随着时间的推移而慢慢下滑，甚至患上慢性病，需要不断的服用保健品或者药物，而能够准时按量服用其实是一件比较困难的事情，常常因为忘记服用导致药效降低或者服用间隔短造成药物浓度过高，严重者可能危及生命安全。从关爱自己和家人健康出发，我们开发了这款软件：<br><br>
+	1.支持一周内间隔任意设定，特殊服用周期灵活设置；<br>
+	2.持续时长可以是一周内任意一天，也可以持续一周、两周……一月、季度、年、永久，方便设置不同时长的提醒；<br>
+	3.同时可以设置服用提醒，提示一些注意事项；<br>
+	4.一个客户端可以为不同人设置，方便为老人、小孩等多人提醒，真正的关爱家人；<br>
+	5.不仅仅可以设置提醒药物或保健品，更可以设置提醒喝水、吃水果等提醒。<br><br><br><br></div>
+	</div>
+<#else>
+	<div style="line-height:2.0;font-size:14px;">
+	&nbsp;&nbsp;&nbsp;&nbsp;With the time pass by, the health level will slowly decline, or even suffer some chronic diseases, and required to constantly take a supplement or medication, take those pills on time according to the requirement is a difficult thing, it is often due to that you forget to take then lead to reduced efficacy or taking short intervals and make the pill concentration is too high, in severe cases may be life-threatening. Take care for ourselves and our families, we have developed this software:<br><br>
+	1. Support for the week interval set arbitrarily, taking special period set flexibly;<br>
+	2. The duration can be any day of the week to be a week, two weeks ...... month, quarter, year, permanent, easy to set lengths of time reminder;<br>
+	3. You can also set reminders and notes;<br>
+	4. A user can set for different people of the family, convenient for the senior, children and other people to remind, and this is the real care of the family. <br>
+	5. You can set a reminder not only for take pills or health products, but also can set reminders to drink water, take fruits and other reminders.<br><br><br><br>
+	</div>
+</#if>
+
+</div>
+<#include "/view/inc/bottom.inc" encoding="utf-8">
+</body>
+</html>

@@ -1,0 +1,62 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8"> 
+<#import "/ftl/enumCompute.ftl" as my>
+<script type="text/javascript">
+$(function(){
+	init();
+})
+
+function goBack(){
+	history.go(-1);
+}
+function init(){
+	$("span[name='whichTimeSpan']").each(function(i){
+		var value = $(this).text();
+		value = value.replace("#", i+1);
+		$(this).text(value);
+	})
+}
+</script>
+</head>
+
+<body>
+<#include "/view/inc/head.inc" >
+<div class="banner_zcdl"></div>
+<div class="main" style="border:none">
+	<div class="title"><@spring.message code="page.medical.manage"/></div>
+  <div class="greybg">
+   	<#include "/view/inc/userLogin.inc" encoding="utf-8">
+    <div class="txlist clearfix">
+    	<div class="leftpic"><img src="${path!}/img/icon_2.gif"><br>
+    	  <@spring.message code="page.medical.manage"/></div>
+        <div class="rightcontent edit">
+        	<ul>
+            	<li><label><@spring.message code="page.medical.name"/>：</label><em>${medical.name!}</em></li>
+                <li><label><@spring.message code="page.medical.beginDate"/>：</label>${medical.startDate!}</li>
+                <li><label><@spring.message code="page.medical.interval"/>：</label>${medical.splitDays!} <@spring.message code="page.time.day"/></li>
+                <li><label><@spring.message code="page.medical.duration"/>：</label>${medical.days!} <@spring.message code="page.time.day"/></li>
+                <li><label><@spring.message code="page.medical.everyDosage"/>：</label>${medical.takeNum!} <@my.takeUnit value=medical.takeUnit/></li>
+                <li><label><@spring.message code="page.medical.timing"/>：</label><@my.eatTime value=medical.eatTime/></li>
+                <li><label><@spring.message code="page.medical.attention"/>：</label>${medical.remark!}</li>     
+                <div class="tipstime"><@spring.message code="page.medical.prompt"/>：</div> 
+                <#list medicalTimeList as medicalTime>      	
+                	<li style="padding-left:45px"><span name="whichTimeSpan"><@spring.message code="page.remind.the"/>#<@spring.message code="page.remind.times"/></span><span class="name">${medicalTime.takeTime!}</span></li>
+                </#list>
+            </ul>
+            <br>
+            <div align="center"><input type="button" name="button" class="btn" id="button" onclick="window.location='medicalList.do'" value='<@spring.message code="page.common.back"/>'></div>
+        </div>
+        
+    </div>
+    
+    <p>&nbsp;</p>
+  </div>
+</div>
+<#include "/view/inc/bottom.inc" encoding="utf-8"> 
+</body>
+</html>

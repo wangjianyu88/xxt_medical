@@ -1,0 +1,45 @@
+<#assign spring=JspTaglibs["/WEB-INF/tld/spring.tld"]/>
+<html>
+<head>
+<meta charset="utf-8">
+<title><@spring.message code="page.common.title"/></title>
+<#include "/view/inc/script.inc" encoding="utf-8"> 
+<script language="javascript" src="${path!}/view/login/js/login.js"></script>
+</head>
+
+<body>
+<#include "/view/inc/head.inc" > 
+<div class="banner_zcdl"></div>
+<div class="main">
+	<div class="title"><@spring.message code="page.member.login"/></div>
+<form name="form" id="form" method="post">
+    <table class="zc_table" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="right"><em>*</em> <@spring.message code="page.register.username"/>：</td>
+      <td width="68%">
+        <input name="username" type="text" class="inp" id="username" placeholder='<@spring.message code="page.register.please"/>'></td>
+    </tr>
+    <tr>
+      <td align="right"><em>*</em> <@spring.message code="page.register.password"/>：</td>
+      <td><input name="password" type="password" class="inp" id="password"></td>
+    </tr>
+    <tr>
+      <td align="right">&nbsp;</td>
+      <td><a href="${path!}/register/forgetPasswordIndex.do"><@spring.message code="page.login.forgetPassword"/></a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="${path!}/register/registerIndex.do"><@spring.message code="page.register.freeRegister"/></a></td>
+    </tr>
+    <tr>
+      <td align="right">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right">&nbsp;</td>
+      <td><input type="button" name="loginBt" class="blue_button" id="loginBt" value='<@spring.message code="page.login"/>'></td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>
+<#include "/view/inc/bottom.inc" encoding="utf-8">
+</body>
+</html>
